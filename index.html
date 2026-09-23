@@ -398,7 +398,7 @@
                 <div class="badge">3</div>
                 <div>
                   <div class="step-title">充值手续费</div>
-                  <div class="step-sub">上一步金额 × 1.003</div>
+                  <div class="step-sub">上一步金额 × 1.0035</div>
                 </div>
               </div>
               <div id="step3" class="step-value">$—</div>
@@ -412,7 +412,7 @@
             </div>
             <div class="formula">
               公式：<br>
-              （PHP 换算 USD + 0.30）× 1.003
+              （PHP 换算 USD + 0.30）× 1.0035
             </div>
           </div>
         </div>
@@ -470,7 +470,7 @@ function calculate(){
 
   const converted = php * phpToUsd;
   const withCardFee = converted + 0.30;
-  const finalCost = withCardFee * 1.003;
+  const finalCost = withCardFee * 1.0035;
 
   phpView.textContent = fmtPHP(php);
   usdView.textContent = fmtUSD(converted);
@@ -523,12 +523,12 @@ copyBtn.addEventListener('click', async ()=>{
   if(!phpToUsd || !Number.isFinite(php)) return;
   const converted = php * phpToUsd;
   const withCardFee = converted + 0.30;
-  const finalCost = withCardFee * 1.003;
+  const finalCost = withCardFee * 1.0035;
   const text =
 `PHP ${php.toFixed(2)}
 换算美元：${fmtUSD(converted)}
 + 开卡费 $0.30：${fmtUSD(withCardFee)}
-× 1.003：${fmtUSD(finalCost)}
+× 1.0035：${fmtUSD(finalCost)}
 最终成本：${fmtUSD(finalCost)}`;
 
   try{
